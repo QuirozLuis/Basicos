@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <link rel="stylesheet" type="text/css" href="Notas.css" media="screen" />
+</head>
+
+<body>
+
+    <div id="titulo">
+        <h1>Notas del alumno</h1>
+    </div>
+    <div id="texto">
+        <input type="text" name="valor1" id="texto1">
+        <input type="text" name="valor2" id="texto2">
+        <input type="text" name="valor3" id="texto3">
+    </div>
+    <div id="boton">
+        <button id="boton1" class="boton1" onclick="calificacion()">Verificar</button>
+        <script type="text/javascript">
+            function calificacion() {
+            
+                var nota1 = document.getElementById('texto1').value;
+                var nota2 = document.getElementById('texto2').value;
+                var nota3 = document.getElementById('texto3').value;
+
+                var situacion;
+
+                var media = (Number(nota1) + Number(nota2) + Number(nota3)) / 3;
+
+                console.log('La nota es: ', media);
+
+                if (media >= 8) {
+                    situacion = 'Excelente';
+                    console.log('Excelente');
+                    var resultado = document.getElementById('resultado');
+                    resultado.style.backgroundColor = 'green';
+                    resultado.style.color = 'black';
+                    resultado.textContent = 'EXCELENTE';
+                    resultado.style.fontSize = '30px';
+                } else if (media >= 5 && media < 8) {
+                    situacion = 'Aprobado';
+                    console.log('Aprobado');
+                    var resultado = document.getElementById('resultado');
+                    resultado.style.backgroundColor = 'orange';
+                    resultado.style.color = 'black';
+                    resultado.textContent = 'APROBADO';
+                    resultado.style.fontSize = '30px';
+                } else {
+                    situacion = 'Suspendido';
+                    console.log('Suspendido');
+                    var resultado = document.getElementById('resultado');
+                    resultado.style.backgroundColor = 'red';
+                    resultado.style.color = 'black';
+                    resultado.textContent = 'SUSPENDIDO';
+                    resultado.style.fontSize = '30px';
+                }
+
+                prompt('La nota es: ', media)
+                alert(situacion);
+            }
+        </script>
+    </div>
+
+    <div id="resultado">
+    </div>
+
+</body>
+
+</html>

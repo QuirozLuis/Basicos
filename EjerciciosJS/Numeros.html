@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+    <link rel="stylesheet" type="text/css" href="Numeros.css" media="screen" />
+</head>
+
+<body>
+
+    <div id="titulo">
+        <h1>Adivina el Numero</h1>
+    </div>
+    <div id="texto">
+        <h1>
+            Haz click en el boton y trata de adivinar el numero que te va dejar salir.
+        </h1>
+    </div>
+    <div id="boton">
+        <button id="boton1" class="boton1" onclick="numeros()">Jugar</button>
+        <script type="text/javascript">
+            function numeros() {
+
+                do {
+                    var numero = prompt('Dame un numero: ', '');
+                } while (numero != 7);
+            }
+        </script>
+    </div>
+
+    <div id="resultado">
+    </div>
+
+</body>
+
+</html>

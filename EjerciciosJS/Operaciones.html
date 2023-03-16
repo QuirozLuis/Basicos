@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="Operaciones.css" media="screen" />
+</head>
+
+<body>
+
+    <div id="titulo">
+        <h1>Calculadora</h1>
+    </div>
+    <div id="texto">
+        <input type="text" name="valor1" id="texto1">
+        <input type="text" name="valor2" id="texto2">
+    </div>
+    <div id="boton">
+        <button id="boton1" class="boton1" onclick="calculadora()">Calcular</button>
+        <script type="text/javascript">
+            function calculadora() {
+
+                var suma, resta, multiplicacion, division;
+
+                var x = document.getElementById('texto1').value;
+                var y = document.getElementById('texto2').value;
+
+                if (y == 0) {
+                    suma = Number(x) + Number(y);
+                    resta = x - y;
+                    multiplicacion = x * y;
+                    division = 'error';
+                    var sumaTexto = document.getElementById('resultadoSuma');
+                    sumaTexto.textContent = 'SUMA = ' + suma;
+                    var restaTexto = document.getElementById('resultadoResta');
+                    restaTexto.textContent = 'RESTA = ' + resta;
+                    var multiplicacionTexto = document.getElementById('resultadoMultiplicacion');
+                    multiplicacionTexto.textContent = 'MULTIPLICACION = ' + multiplicacion;
+                    var divisionTexto = document.getElementById('resultadoDivision');
+                    divisionTexto.textContent = 'DIVISION = ' + division;
+                } else {
+                    suma = Number(x) + Number(y);
+                    resta = x - y;
+                    multiplicacion = x * y;
+                    division = x / y;
+                    var sumaTexto = document.getElementById('resultadoSuma');
+                    sumaTexto.textContent = 'SUMA = ' + suma;
+                    var restaTexto = document.getElementById('resultadoResta');
+                    restaTexto.textContent = 'RESTA = ' + resta;
+                    var multiplicacionTexto = document.getElementById('resultadoMultiplicacion');
+                    multiplicacionTexto.textContent = 'MULTIPLICACION = ' + multiplicacion;
+                    var divisionTexto = document.getElementById('resultadoDivision');
+                    divisionTexto.textContent = 'DIVISION = ' + division;
+                }
+
+            }
+        </script>
+    </div>
+
+    <div id="resultadoSuma">
+    </div>
+    <div id="resultadoResta">
+    </div>
+    <div id="resultadoMultiplicacion">
+    </div>
+    <div id="resultadoDivision">
+    </div>
+
+</body>
+
+</html>
